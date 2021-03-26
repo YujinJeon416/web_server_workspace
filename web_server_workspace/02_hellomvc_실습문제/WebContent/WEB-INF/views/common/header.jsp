@@ -81,7 +81,7 @@ $(function(){
 		var $phone = $("#phone");
 		var flag = /\D/.test($phone.val());
 		if(flag) {
-			alert("핸드폰 번호에 숫자가 아닌 문자가 포함되어 있습니다.");
+			alert("숫자가 아닌 문자가 포함되어 있습니다.");
 			return false;
 		}
 		
