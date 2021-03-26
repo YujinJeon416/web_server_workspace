@@ -34,12 +34,12 @@ public class MemberEnrollServlet extends HttpServlet {
 	 * 회원가입성공|실패시 사용자 메시지를 띄운다.
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//1.전송값에 한글이 있을 경우 인코딩처리해야함.
-				//void javax.servlet.ServletRequest.setCharacterEncoding(String arg0) throws UnsupportedEncodingException
-				request.setCharacterEncoding("UTF-8");//대소문자 상관없음. 요청한 view단의 charset값과 동일해야 한다.
+		//1.인코딩처리
+				
+				request.setCharacterEncoding("UTF-8");
 				
 				//2.전송값 꺼내서 변수에 기록하기.
-				//String javax.servlet.ServletRequest.getParameter(String arg0)
+			
 				String memberId = request.getParameter("memberId");
 				String password = request.getParameter("password");
 				String memberName = request.getParameter("memberName");
@@ -50,16 +50,15 @@ public class MemberEnrollServlet extends HttpServlet {
 				String address = request.getParameter("address");
 				String memberRole = MemberService.MEMBER_ROLE;
 				
-				//체크박스같은 경우 선택된 복수의 값이 배열로 전달된다.
-				//String[] javax.servlet.ServletRequest.getParameterValues(String arg0)
+				
+				
 				String[] hobbies = request.getParameterValues("hobby");
 				
 				String hobby = "";
-				//String java.lang.String.join(CharSequence delimiter, CharSequence... elements)
-				//파라미터로 전달한 문자열배열이 null이면, NullPointerException유발.
+				
 				if(hobbies != null) hobby = String.join(",", hobbies);
 
-				//날짜타입으로 변경 : 1990-09-09
+				
 				Date birthday_ = null;
 				if(birthday != null && !"".equals(birthday))
 					birthday_ = Date.valueOf(birthday);
