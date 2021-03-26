@@ -38,7 +38,7 @@ public class MemberEnrollServlet extends HttpServlet {
 				
 				request.setCharacterEncoding("UTF-8");
 				
-				//2.전송값 꺼내서 변수에 기록하기.
+				//2.전송값
 			
 				String memberId = request.getParameter("memberId");
 				String password = request.getParameter("password");
