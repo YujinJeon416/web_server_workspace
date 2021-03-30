@@ -41,13 +41,13 @@ public class UpdatePasswordServlet extends HttpServlet {
 
 		if(oldPassword.equals(loginMember.getPassword())) {
 			
-			//3. 업무로직 : 기존비밀번호가 일치한 경우만 신규비밀번호로 업데이트한다.
-			loginMember.setPassword(newPassword);
-			result = memberService.updatePassword(loginMember);
-			msg = (result > 0) ? 
-					"비밀번호를 성공적으로 변경했습니다." : 
-						"비밀번호를 변경에 실패했습니다.";
-			location += "/member/memberView";
+		//3. 업무로직 : 기존비밀번호가 일치한 경우만 신규비밀번호로 업데이트한다.
+		loginMember.setPassword(newPassword);
+		result = memberService.updatePassword(loginMember);
+		msg = (result > 0) ? 
+		"비밀번호를 성공적으로 변경했습니다." : 
+		"비밀번호를 변경에 실패했습니다.";
+		location += "/member/memberView";
 		}
 		else {
 			msg = "비밀번호가 일치하지 않습니다.";				
