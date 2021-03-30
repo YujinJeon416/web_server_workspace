@@ -46,7 +46,7 @@ public class UpdatePasswordServlet extends HttpServlet {
 		result = memberService.updatePassword(loginMember);
 		msg = (result > 0) ? 
 		"비밀번호를 성공적으로 변경했습니다." : 
-		"비밀번호를 변경에 실패했습니다.";
+		"비밀번호 변경에 실패했습니다.";
 		location += "/member/memberView";
 		}
 		else {
